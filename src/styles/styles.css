@@ -6,12 +6,9 @@ body {
 .form-box {
     justify-content: left ;
     margin: 85px ;
-
     text-align: center ;
-
     background-color: #fcfcfc ;
     box-shadow: 2px 2px 15px rgb(23, 45, 33) ;
-
     height: 480px ;
     width: 400px ;
 }
@@ -23,14 +20,10 @@ body {
 input {
     display: block ;
     margin: 15px auto ;
-
     height: 45px ;
     width: 350px ;
-
     text-align: center ;
-
     border-radius: 20px ;
-
     font-size: 18px ;
     font-weight: bold ;
 }
@@ -41,16 +34,13 @@ input {
 
 #login-button {
     cursor: pointer ;
-
     color: #fcfcfc ;
     background-color: #185680 ;
 }
 
 #create-new-account-button {
     text-decoration: none ;
-
     font-size: 18px ;
     font-weight: bold ;
-
     color: #185680 ;
 }
