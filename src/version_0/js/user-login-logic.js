@@ -8,31 +8,78 @@ var users = [
         username: 'Steve',
         password: 'owiu992bdsd11po',
         permission: 'COMMON'
+    },
+    {
+        username: 'Laura',
+        password: 'smcq0192nzlasl3',
+        permission: 'COMMON' 
     }
-] 
+]
 
-let usernameTextField = document.getElementById('username-text-field') ;
-let passwordTextField = document.getElementById('password-text-field') ;
+const images = [
+    'images/ny.jpg',
+    'images/dubai.jpg',
+    'images/singapore.jpg'
+]
 
-let loginButton = document.getElementById('login-button') ;
+var expanded = false ;
+
+const usernameTextField = document.getElementById('username-text-field') ;
+const passwordTextField = document.getElementById('password-text-field') ;
+const closeButton = document.getElementById('close-button') ;
+const expandButton = document.getElementById('expand-button') ;
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector('body').style.backgroundImage = images[getRandomInt(images.length)].toString() ;
+}) ;
+
+const loginButton = document.getElementById('sign-in-button') ;
 loginButton.addEventListener('click', function() {
     const username = usernameTextField.value ;
     const password = passwordTextField.value ;
 
+    var userExists = false ;
+
     users.forEach( user => {
         if (user.username == username && user.password == password) {
             console.log(`You're logged as ${user.permission}`) ;
-        } else {
-            console.log(`That user doesn't exists`) ;
-            addNewUserAsCommon({username: username, 
-                                password: password, 
-                                permission: 'COMMON'}) ;
-        }    
+            userExists = true ;
+        }  
     }) ;
+
+    if (!userExists) {
+        console.log(`That user doesn't exists`) ;
+        addNewUserAsCommon({username: username, 
+                            password: password, 
+                            permission: 'COMMON'}) ;
+    }
 }) ;
 
 function addNewUserAsCommon(user) {
     users.push({username: user.username, 
                 password: user.password, 
                 permission: user.permission}) ;
+}
+
+closeButton.addEventListener('click', () => {
+    document.querySelector('.bg-modal').style.display = "none" ;
+}) ;
+
+expandButton.addEventListener('click', expandModalContent) ;
+
+function expandModalContent() {
+    if (!expanded) {
+        document.querySelector('.modal-content').style.width = "100%" ;
+        document.querySelector('.modal-content').style.height = "100%" ;
+        expanded = true ;
+    } else {
+        document.querySelector('.modal-content').style.width = "500px" ;
+        document.querySelector('.modal-content').style.height = "300px" ;
+        expanded = false ; 
+    }
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
 }

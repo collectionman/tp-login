@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Login</title>
     <link rel="stylesheet" href="../../styles/styles.css">
+    <title>Modal PopUp</title>
 </head>
+
 <body>
-    <main>
-        <div class="form-box">
-            <h2 class="form-title">Welcome To Somewhere ¯\_(ツ)_/¯</h2>
-
-            <div class="form-text-fields">
-                <input type="text" placeholder="Enter your username" id="username-text-field"/>
-                <input type="password" placeholder="Enter your password" id="password-text-field"/>
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="circles">
+                <div class="circle circle-left" id="close-button"></div>
+                <div class="circle circle-middle"></div>
+                <div class="circle circle-right" id="expand-button"></div>
             </div>
 
-            <div class="form-buttons">
-                <input type="button" value="Log In" id="login-button"/>
+            <h2>Welcome to Somewhere</h2>
 
-                <p>
-                    <a href="#" id="create-new-account-button">Create a new account</a>
-                </p>
-            </div>
+            <form action="">
+                <div class="form-content">
+                    <input type="text" placeholder="Enter your username" id="username-text-field">
+                    <input type="password" placeholder="Enter your password" id="password-text-field">
+                    <div class="form-buttons">
+                        <input type="button" value="SignUp" class="sign-button" id="sign-up-button">
+                        <input type="button" value="SignIn" class="sign-button" id="sign-in-button">
+                    </div>
+                </div>
+            </form>
         </div>
-    </main>
-    <script src="../js/user-login-logic.js"></script>
+    </div>
+    <script src="../js/user-login-logic.js" type="text/javascript"></script>
 </body>
+
 </html>
