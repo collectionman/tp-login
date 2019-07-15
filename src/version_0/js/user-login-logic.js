@@ -17,9 +17,9 @@ var users = [
 ]
 
 const images = [
-    'images/ny.jpg',
-    'images/dubai.jpg',
-    'images/singapore.jpg'
+    '../../styles/images/ny.jpg',
+    '../../styles/images/dubai.jpg',
+    '../../styles/images/singapore.jpg'
 ]
 
 var expanded = false ;
@@ -30,8 +30,8 @@ const closeButton = document.getElementById('close-button') ;
 const expandButton = document.getElementById('expand-button') ;
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector('body').style.backgroundImage = images[getRandomInt(images.length)].toString() ;
+document.addEventListener("DOMContentLoaded", () => { 
+    document.querySelector('body').style.backgroundImage = `url(${images[getRandomInt(images.length)]})` ;
 }) ;
 
 const loginButton = document.getElementById('sign-in-button') ;
